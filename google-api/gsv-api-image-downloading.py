@@ -14,7 +14,8 @@ SV_IMAGE = "https://maps.googleapis.com/maps/api/streetview?"
 SV_IMAGE_METADATA = "https://maps.googleapis.com/maps/api/streetview/metadata?"
 
 # get a list of streets based only the name of the city or area
-streets = ["Topaasstraat, Amsterdam, North Holand"]
+#streets = ["Topaasstraat, Amsterdam, North Holand"]
+streets = ["Avenida 9 de Julho, Sao Jose dos Campos, Brasil"]
 WIDTH = 640
 HEIGHT = 640
 HEADING_MIN=0
