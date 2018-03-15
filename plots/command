@@ -1,0 +1,4 @@
+python plot-csv.py *.csv
+
+#mosaic
+convert +append *png output.png
