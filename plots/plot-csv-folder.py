@@ -65,7 +65,7 @@ for file in files:
 		name, file_extension = os.path.splitext(filename)
 		dataset = name.replace("evaluation-", "")	
 		output =  sys.argv[1] + "/" + name + "-output.svg"
-		output =  sys.argv[1] + "/" + name + "-output.pdf"
+		output2 =  sys.argv[1] + "/" + name + "-output.pdf"
 
 		# print(file)
 		# print(absolute_path)
