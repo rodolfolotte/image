@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Usage: ./convert-append.sh /home/rodolfo/Desktop/orig/ /home/rodolfo/Desktop/seg/ /home/rodolfo/Desktop/overlay/ /home/rodolfo/Desktop/merge1/
-for file in $1*.jpg; do
+for file in $1*.JPG; do    
 	noextension="${file%.*}"
     filename=$(basename "$noextension")
     segmentation=$2$filename'.png'
