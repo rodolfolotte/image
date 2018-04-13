@@ -19,6 +19,9 @@ classes_colors =  [[0, 0, 0], #background
                   [255, 128, 0], #door
                   [0, 255, 0]] #shop
 
+print(os.path.isfile(original))
+print(os.path.isfile(reference))
+
 if((os.path.isfile(original)) and (os.path.isfile(reference))):
     print("Validating image " + original_base + " with reference: " + reference_base)
     image = cv2.imread(original)
@@ -145,7 +148,7 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
     overall_pre = sum(precision_array) / float(count_real_classes)      
 
     print("..overall accuracy: " + str(overall_acc))    
-    print("..overall precision: " + str(overall_pre))
+    print("..overall precision: " + str(overall_pre) + "\n")
 
 else:
     print("Original or reference image is not a valid file. Check it and try again!")
