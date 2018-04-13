@@ -41,7 +41,7 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
         sys.exit()
 
     total_pixels = rows_image * cols_image
-    
+
     count_colors_in_image_array = []
     count_colors_in_gt_array = []
     tp = []
@@ -61,21 +61,21 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
     precision = 0.0
 
     count_real_classes = 0
-    
+
     #True positive = correctly identified
     #False positive = incorrectly identified
     #True negative = correctly rejected
     #False negative = incorrectly rejected
     for cl_color in classes_colors:
         for i in range(rows_image):
-            for j in range(cols_image):                
+            for j in range(cols_image):
 
                 color_image = image[i, j]
-                color_image = map(int, color_image)                
+                color_image = map(int, color_image)
 
                 color_gt = gt[i, j]
                 color_gt = map(int, color_gt)
-                
+
                 if(cl_color == color_image):
                     count_colors_in_image += 1
 
@@ -84,13 +84,13 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
 
                 if((color_gt == cl_color) and (color_image == color_gt)):
                     tp_count += 1
-                
+
                 if((color_gt != cl_color) and (color_image != color_gt)):
                     tn_count += 1
 
                 if((color_gt != cl_color) and (color_image == cl_color)):
                     fp_count += 1
-                
+
                 if((color_gt == cl_color) and (color_image != cl_color)):
                     fn_count += 1
 
@@ -104,17 +104,17 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
             count_colors_in_image_array.append(count_colors_in_image)
             count_colors_in_gt_array.append(count_colors_in_gt)
 
-            if(count_colors_in_image != 0):
-                tp.append(tp_count/float(count_colors_in_image))
-                fp.append(fp_count/float(count_colors_in_image))
-                tn.append(tn_count/float(count_colors_in_image))
-                fn.append(fn_count/float(count_colors_in_image))
-            else:
-                tp.append(tp_count)
-                fp.append(fp_count)
-                tn.append(tn_count)
-                fn.append(fn_count)
-            
+            # if(count_colors_in_image != 0):
+            #     tp.append(tp_count/float(count_colors_in_image))
+            #     fp.append(fp_count/float(count_colors_in_image))
+            #     tn.append(tn_count/float(count_colors_in_image))
+            #     fn.append(fn_count/float(count_colors_in_image))
+            # else:
+            tp.append(tp_count)
+            fp.append(fp_count)
+            tn.append(tn_count)
+            fn.append(fn_count)
+
             acc_division = float(tp_count + fp_count + tn_count + fn_count)
             pre_division = float(tp_count + fp_count)
 
@@ -128,7 +128,8 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
             else:
                 precision_array.append(0)
 
-            print('....class: ' + str(cl_color) + ": tp[" + str(tp_count) + " - " + str(tp_count/float(count_colors_in_image)) + "] tn[" + str(tn_count) + " - " + str(tn_count/float(count_colors_in_image)) + "] fp[" + str(fp_count) + " - " + str(fp_count/float(count_colors_in_image)) + "] fn[" + str(fn_count) + " - " + str(fn_count/float(count_colors_in_image)) + "] - population; " + str(count_colors_in_image))
+            #print('....class: ' + str(cl_color) + ": tp[" + str(tp_count) + " - " + str(tp_count/float(count_colors_in_image)) + "] tn[" + str(tn_count) + " - " + str(tn_count/float(count_colors_in_image)) + "] fp[" + str(fp_count) + " - " + str(fp_count/float(count_colors_in_image)) + "] fn[" + str(fn_count) + " - " + str(fn_count/float(count_colors_in_image)) + "] - population; " + str(count_colors_in_image))
+            print('....class: ' + str(cl_color) + ": tp[" + str(tp_count) + "] tn[" + str(tn_count) + "] fp[" + str(fp_count) + "] fn[" + str(fn_count) + "] - population; " + str(count_colors_in_image))
 
         count_colors_in_image = 0
         count_colors_in_gt = 0
@@ -136,18 +137,18 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
         tn_count = 0
         fp_count = 0
         fn_count = 0
-    
+
     print("...total pixels: " + str(total_pixels))
     print("...expected classes: " + str(len(classes_colors)) + " found in segmented image: " + str(count_real_classes))
     sys.stdout.write("...accuracy: ")
-    print(" ".join(str(x) for x in accuracy_array))    
+    print(" ".join(str(x) for x in accuracy_array))
     sys.stdout.write("...precision: ")
-    print(" ".join(str(x) for x in precision_array))  
+    print(" ".join(str(x) for x in precision_array))
 
     overall_acc = sum(accuracy_array) / float(count_real_classes)
-    overall_pre = sum(precision_array) / float(count_real_classes)      
+    overall_pre = sum(precision_array) / float(count_real_classes)
 
-    print("..overall accuracy: " + str(overall_acc))    
+    print("..overall accuracy: " + str(overall_acc))
     print("..overall precision: " + str(overall_pre) + "\n")
 
 else:
