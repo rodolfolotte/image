@@ -1,0 +1,7 @@
+python evaluate.py /data/phd/results/facades-benchmark/sjc/inferences/ruemonge-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png
+python evaluate.py /data/phd/results/facades-benchmark/sjc/inferences/cmp-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png
+python evaluate.py /data/phd/results/facades-benchmark/sjc/inferences/etrims-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png
+python evaluate.py /data/phd/results/facades-benchmark/sjc/inferences/ecp-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png
+python evaluate.py /data/phd/results/facades-benchmark/sjc/inferences/enpc-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png
+python evaluate.py /data/phd/results/facades-benchmark/sjc/inferences/graz-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png
+python evaluate.py /data/phd/results/facades-benchmark/sjc/inferences/all-together-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png

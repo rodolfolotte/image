@@ -12,7 +12,7 @@ for file in $1*.JPG; do
 
     if [ -f $segmentation ]; then
     	composite -blend 30 $segmentation $file $overlay
-     	convert -append $file $segmentation $overlay $4$filename'.png'
+     	convert +append $file $segmentation $overlay $4$filename'.png'
 	fi
 done
 
