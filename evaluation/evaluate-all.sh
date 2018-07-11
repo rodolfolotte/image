@@ -1,32 +1,147 @@
-# echo 'RueMonge2014'
+echo 'RueMonge2014'
 # python confusion-matrix.py /data/phd/results/facades-benchmark/ruemonge2014/inferences/50k/segmentation/IMG_5517.png /data/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5517.png
-# python confusion-matrix.py /data/phd/results/facades-benchmark/ruemonge2014/inferences/50k/segmentation/IMG_5840.png /data/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5840.png
-# python confusion-matrix.py /data/phd/results/facades-benchmark/ruemonge2014/inferences/50k/segmentation/IMG_5726.png /data/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5726.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5643.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5643.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5692.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5692.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5840.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5840.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5733.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5733.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5816.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5816.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5546.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5546.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5681.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5681.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5703.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5703.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5602.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5602.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5520.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5520.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5744.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5744.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5517.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5517.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5599.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5599.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5779.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5779.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5757.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5757.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5555.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5555.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5857.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5857.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5760.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5760.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5761.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5761.png
+/home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/dataset/IMG_5726.jpg /home/rodolfo/Dropbox/phd/data/facades-benchmark/ruemonge2014/annotation/IMG_5726.png
 
-# echo 'CMP'
+echo 'CMP'
 # python confusion-matrix.py /data/phd/results/facades-benchmark/cmp/inferences/50k/cmp_b0229.png /data/phd/data/facades-benchmark/cmp/annotation-unified/cmp_b0229.png
-# python confusion-matrix.py /data/phd/results/facades-benchmark/cmp/inferences/50k/cmp_b0267.png /data/phd/data/facades-benchmark/cmp/annotation-unified/cmp_b0267.png
-# python confusion-matrix.py /data/phd/results/facades-benchmark/cmp/inferences/50k/cmp_b0137.png /data/phd/data/facades-benchmark/cmp/annotation-unified/cmp_b0137.png
+/data/cmp/original/cmp_b0126.jpg /data/cmp/annotation-unified/cmp_b0126.png
+/data/cmp/original/cmp_b0101.jpg /data/cmp/annotation-unified/cmp_b0101.png
+/data/cmp/original/cmp_b0017.jpg /data/cmp/annotation-unified/cmp_b0017.png
+/data/cmp/original/cmp_b0073.jpg /data/cmp/annotation-unified/cmp_b0073.png
+/data/cmp/original/cmp_b0271.jpg /data/cmp/annotation-unified/cmp_b0271.png
+/data/cmp/original/cmp_b0169.jpg /data/cmp/annotation-unified/cmp_b0169.png
+/data/cmp/original/cmp_b0115.jpg /data/cmp/annotation-unified/cmp_b0115.png
+/data/cmp/original/cmp_b0212.jpg /data/cmp/annotation-unified/cmp_b0212.png
+/data/cmp/original/cmp_b0031.jpg /data/cmp/annotation-unified/cmp_b0031.png
+/data/cmp/original/cmp_b0299.jpg /data/cmp/annotation-unified/cmp_b0299.png
+/data/cmp/original/cmp_b0170.jpg /data/cmp/annotation-unified/cmp_b0170.png
+/data/cmp/original/cmp_b0010.jpg /data/cmp/annotation-unified/cmp_b0010.png
+/data/cmp/original/cmp_b0131.jpg /data/cmp/annotation-unified/cmp_b0131.png
+/data/cmp/original/cmp_b0229.jpg /data/cmp/annotation-unified/cmp_b0229.png
+/data/cmp/original/cmp_b0267.jpg /data/cmp/annotation-unified/cmp_b0267.png
+/data/cmp/original/cmp_b0137.jpg /data/cmp/annotation-unified/cmp_b0137.png
+/data/cmp/original/cmp_b0202.jpg /data/cmp/annotation-unified/cmp_b0202.png
+/data/cmp/original/cmp_b0295.jpg /data/cmp/annotation-unified/cmp_b0295.png
+/data/cmp/original/cmp_b0371.jpg /data/cmp/annotation-unified/cmp_b0371.png
+/data/cmp/original/cmp_b0223.jpg /data/cmp/annotation-unified/cmp_b0223.png
 
-# echo 'eTRIMS'
+echo 'eTRIMS'
 # python confusion-matrix.py /data/phd/results/facades-benchmark/etrims/inferences/50k/basel_000062_mv0.png /data/phd/data/facades-benchmark/etrims/annotation-unified/basel_000062_mv0.png
-# python confusion-matrix.py /data/phd/results/facades-benchmark/etrims/inferences/50k/heidelberg_000035_mv0.png /data/phd/data/facades-benchmark/etrims/annotation-unified/heidelberg_000035_mv0.png
-# python confusion-matrix.py /data/phd/results/facades-benchmark/etrims/inferences/50k/bonn_000018.png /data/phd/data/facades-benchmark/etrims/annotation-unified/bonn_000018.png
+/data/etrims/images/08_etrims-ds/basel_000074_mv0.jpg /data/etrims/annotation-unified/basel_000074_mv0.png
+/data/etrims/images/08_etrims-ds/basel_000004_mv0.jpg /data/etrims/annotation-unified/basel_000004_mv0.png
+/data/etrims/images/08_etrims-ds/basel_000070_mv0.jpg /data/etrims/annotation-unified/basel_000070_mv0.png
+/data/etrims/images/08_etrims-ds/heidelberg_000035_mv0.jpg /data/etrims/annotation-unified/heidelberg_000035_mv0.png
+/data/etrims/images/08_etrims-ds/basel_000052_mv0.jpg /data/etrims/annotation-unified/basel_000052_mv0.png
+/data/etrims/images/08_etrims-ds/basel_000005_mv0.jpg /data/etrims/annotation-unified/basel_000005_mv0.png
+/data/etrims/images/08_etrims-ds/bonn_000033.jpg /data/etrims/annotation-unified/bonn_000033.png
+/data/etrims/images/08_etrims-ds/basel_000010_mv0.jpg /data/etrims/annotation-unified/basel_000010_mv0.png
+/data/etrims/images/08_etrims-ds/heidelberg_000029_mv0.jpg /data/etrims/annotation-unified/heidelberg_000029_mv0.png
+/data/etrims/images/08_etrims-ds/berlin_000028.jpg /data/etrims/annotation-unified/berlin_000028.png
+/data/etrims/images/08_etrims-ds/basel_000073_mv0.jpg /data/etrims/annotation-unified/basel_000073_mv0.png
+/data/etrims/images/08_etrims-ds/basel_000080_mv0.jpg /data/etrims/annotation-unified/basel_000080_mv0.png
+/data/etrims/images/08_etrims-ds/bonn_000018.jpg /data/etrims/annotation-unified/bonn_000018.png
+/data/etrims/images/08_etrims-ds/berlin_000011.jpg /data/etrims/annotation-unified/berlin_000011.png
+/data/etrims/images/08_etrims-ds/prague_000002.jpg /data/etrims/annotation-unified/prague_000002.png
+/data/etrims/images/08_etrims-ds/basel_000062_mv0.jpg /data/etrims/annotation-unified/basel_000062_mv0.png
+/data/etrims/images/08_etrims-ds/basel_000053_mv0.jpg /data/etrims/annotation-unified/basel_000053_mv0.png
+/data/etrims/images/08_etrims-ds/basel_000051_mv0.jpg /data/etrims/annotation-unified/basel_000051_mv0.png
+/data/etrims/images/08_etrims-ds/bonn_000042.jpg /data/etrims/annotation-unified/bonn_000042.png
+/data/etrims/images/08_etrims-ds/basel_000078_mv0.jpg /data/etrims/annotation-unified/basel_000078_mv0.png
 
-# echo 'ECP'
+echo 'ECP'
 # python confusion-matrix.py /data/phd/results/facades-benchmark/ecp/inferences/50k/monge_16.png /data/phd/data/facades-benchmark/ecp/annotation/monge_16.png
 # python confusion-matrix.py /data/phd/results/facades-benchmark/ecp/inferences/50k/monge_80.png /data/phd/data/facades-benchmark/ecp/annotation/monge_80.png
 # python confusion-matrix.py /data/phd/results/facades-benchmark/ecp/inferences/50k/monge_74.png /data/phd/data/facades-benchmark/ecp/annotation/monge_74.png
+/data/ecp/images/monge_72.jpg /data/ecp/annotation/monge_72.png
+/data/ecp/images/monge_12.jpg /data/ecp/annotation/monge_12.png
+/data/ecp/images/monge_5.jpg /data/ecp/annotation/monge_5.png
+/data/ecp/images/monge_1.jpg /data/ecp/annotation/monge_1.png
+/data/ecp/images/monge_28.jpg /data/ecp/annotation/monge_28.png
+/data/ecp/images/monge_24.jpg /data/ecp/annotation/monge_24.png
+/data/ecp/images/monge_74.jpg /data/ecp/annotation/monge_74.png
+/data/ecp/images/monge_7.jpg /data/ecp/annotation/monge_7.png
+/data/ecp/images/monge_68.jpg /data/ecp/annotation/monge_68.png
+/data/ecp/images/monge_53.jpg /data/ecp/annotation/monge_53.png
+/data/ecp/images/monge_80.jpg /data/ecp/annotation/monge_80.png
+/data/ecp/images/monge_27.jpg /data/ecp/annotation/monge_27.png
+/data/ecp/images/monge_16.jpg /data/ecp/annotation/monge_16.png
+/data/ecp/images/monge_105.jpg /data/ecp/annotation/monge_105.png
+/data/ecp/images/monge_66.jpg /data/ecp/annotation/monge_66.png
+/data/ecp/images/monge_29.jpg /data/ecp/annotation/monge_29.png
+/data/ecp/images/monge_69.jpg /data/ecp/annotation/monge_69.png
+/data/ecp/images/monge_103.jpg /data/ecp/annotation/monge_103.png
+/data/ecp/images/monge_45.jpg /data/ecp/annotation/monge_45.png
+/data/ecp/images/monge_25.jpg /data/ecp/annotation/monge_25.png
 
-# echo 'ENPC'
+echo 'ENPC'
 # python confusion-matrix.py /data/phd/results/facades-benchmark/enpc/inferences/50k/facade_28.png /data/phd/data/facades-benchmark/enpc/annotation/facade_28.png
 # python confusion-matrix.py /data/phd/results/facades-benchmark/enpc/inferences/50k/facade_73.png /data/phd/data/facades-benchmark/enpc/annotation/facade_73.png
 # python confusion-matrix.py /data/phd/results/facades-benchmark/enpc/inferences/50k/facade_54.png /data/phd/data/facades-benchmark/enpc/annotation/facade_54.png
+/data/encp/images/facade_46.png /data/encp/annotations/facade_46.png
+/data/encp/images/facade_53.png /data/encp/annotations/facade_53.png
+/data/encp/images/facade_74.png /data/encp/annotations/facade_74.png
+/data/encp/images/facade_73.png /data/encp/annotations/facade_73.png
+/data/encp/images/facade_54.png /data/encp/annotations/facade_54.png
+/data/encp/images/facade_65.png /data/encp/annotations/facade_65.png
+/data/encp/images/facade_66.png /data/encp/annotations/facade_66.png
+/data/encp/images/facade_13.png /data/encp/annotations/facade_13.png
+/data/encp/images/facade_19.png /data/encp/annotations/facade_19.png
+/data/encp/images/facade_18.png /data/encp/annotations/facade_18.png
+/data/encp/images/facade_25.png /data/encp/annotations/facade_25.png
+/data/encp/images/facade_28.png /data/encp/annotations/facade_28.png
+/data/encp/images/facade_71.png /data/encp/annotations/facade_71.png
+/data/encp/images/facade_59.png /data/encp/annotations/facade_59.png
+/data/encp/images/facade_12.png /data/encp/annotations/facade_12.png
+/data/encp/images/facade_2.png /data/encp/annotations/facade_2.png
+/data/encp/images/facade_26.png /data/encp/annotations/facade_26.png
+/data/encp/images/facade_56.png /data/encp/annotations/facade_56.png
+/data/encp/images/facade_67.png /data/encp/annotations/facade_67.png
+/data/encp/images/facade_60.png /data/encp/annotations/facade_60.png
 
-# echo 'Graz'
+echo 'Graz'
 # python confusion-matrix.py /data/phd/results/facades-benchmark/graz/inferences/50k/facade_0_0053679_0053953.png /data/phd/data/facades-benchmark/graz/labels_full/facade_0_0053679_0053953.png
 # python confusion-matrix.py /data/phd/results/facades-benchmark/graz/inferences/50k/facade_1_0056092_0056345.png /data/phd/data/facades-benchmark/graz/labels_full/facade_1_0056092_0056345.png
 # python confusion-matrix.py /data/phd/results/facades-benchmark/graz/inferences/50k/facade_0_0100003_0100182.png /data/phd/data/facades-benchmark/graz/labels_full/facade_0_0100003_0100182.png
+/data/graz/images/facade_0_0073244_0073648.png /data/graz/labels_full/facade_0_0073244_0073648.png
+/data/graz/images/facade_0_0084815_0085022.png /data/graz/labels_full/facade_0_0084815_0085022.png
+/data/graz/images/facade_0_0078295_0078500.png /data/graz/labels_full/facade_0_0078295_0078500.png
+/data/graz/images/facade_1_0056345_0056536.png /data/graz/labels_full/facade_1_0056345_0056536.png
+/data/graz/images/facade_0_0100003_0100182.png /data/graz/labels_full/facade_0_0100003_0100182.png
+/data/graz/images/facade_0_0078926_0079181.png /data/graz/labels_full/facade_0_0078926_0079181.png
+/data/graz/images/facade_0_0078702_0078926.png /data/graz/labels_full/facade_0_0078702_0078926.png
+/data/graz/images/facade_0_0053403_0053679.png /data/graz/labels_full/facade_0_0053403_0053679.png
+/data/graz/images/facade_0_0054919_0055060.png /data/graz/labels_full/facade_0_0054919_0055060.png
+/data/graz/images/facade_0_0099809_0100003.png /data/graz/labels_full/facade_0_0099809_0100003.png
+/data/graz/images/facade_0_0082229_0082431.png /data/graz/labels_full/facade_0_0082229_0082431.png
+/data/graz/images/facade_1_0056092_0056345.png /data/graz/labels_full/facade_1_0056092_0056345.png
+/data/graz/images/facade_0_0071696_0071863.png /data/graz/labels_full/facade_0_0071696_0071863.png
+/data/graz/images/facade_0_0053679_0053953.png /data/graz/labels_full/facade_0_0053679_0053953.png
+/data/graz/images/facade_0_0101200_0101389.png /data/graz/labels_full/facade_0_0101200_0101389.png
+/data/graz/images/facade_0_0068897_0069182.png /data/graz/labels_full/facade_0_0068897_0069182.png
+/data/graz/images/facade_0_0084655_0084815.png /data/graz/labels_full/facade_0_0084655_0084815.png
+/data/graz/images/facade_0_0099285_0099509.png /data/graz/labels_full/facade_0_0099285_0099509.png
+/data/graz/images/facade_0_0102661_0102921.png /data/graz/labels_full/facade_0_0102661_0102921.png
+/data/graz/images/facade_0_0081240_0081479.png /data/graz/labels_full/facade_0_0081240_0081479.png
+
 
 echo 'SJC-Ruemonge2014'
 python confusion-matrix.py /data/phd/results/facades-benchmark/sjc/inferences/ruemonge-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png
@@ -48,3 +163,181 @@ python confusion-matrix.py /data/phd/results/facades-benchmark/sjc/inferences/gr
 
 echo 'All-together-SJC'
 python confusion-matrix.py /data/phd/results/facades-benchmark/sjc/inferences/all-together-knowledge/segmentation-sjc/IMG_7754.png /data/phd/data/facades-benchmark/sjc/annotation/IMG_7754.png
+/data/all-together-training/dataset/cmp_b0115.jpg /data/all-together-training/annotation/cmp_b0115.png
+/data/all-together-training/dataset/monge_3.jpg /data/all-together-training/annotation/monge_3.png
+/data/all-together-training/dataset/cmp_b0344.jpg /data/all-together-training/annotation/cmp_b0344.png
+/data/all-together-training/dataset/monge_29.jpg /data/all-together-training/annotation/monge_29.png
+/data/all-together-training/dataset/cmp_b0022.jpg /data/all-together-training/annotation/cmp_b0022.png
+/data/all-together-training/dataset/bonn_000039.jpg /data/all-together-training/annotation/bonn_000039.png
+/data/all-together-training/dataset/facade_0_0058997_0059215.jpg /data/all-together-training/annotation/facade_0_0058997_0059215.png
+/data/all-together-training/dataset/cmp_b0178.jpg /data/all-together-training/annotation/cmp_b0178.png
+/data/all-together-training/dataset/IMG_5522.jpg /data/all-together-training/annotation/IMG_5522.png
+/data/all-together-training/dataset/cmp_b0014.jpg /data/all-together-training/annotation/cmp_b0014.png
+/data/all-together-training/dataset/basel_000051_mv0.jpg /data/all-together-training/annotation/basel_000051_mv0.png
+/data/all-together-training/dataset/cmp_b0190.jpg /data/all-together-training/annotation/cmp_b0190.png
+/data/all-together-training/dataset/IMG_5828.jpg /data/all-together-training/annotation/IMG_5828.png
+/data/all-together-training/dataset/cmp_b0133.jpg /data/all-together-training/annotation/cmp_b0133.png
+/data/all-together-training/dataset/cmp_b0165.jpg /data/all-together-training/annotation/cmp_b0165.png
+/data/all-together-training/dataset/cmp_b0057.jpg /data/all-together-training/annotation/cmp_b0057.png
+/data/all-together-training/dataset/facade_0_0084815_0085022.jpg /data/all-together-training/annotation/facade_0_0084815_0085022.png
+/data/all-together-training/dataset/cmp_b0020.jpg /data/all-together-training/annotation/cmp_b0020.png
+/data/all-together-training/dataset/cmp_b0236.jpg /data/all-together-training/annotation/cmp_b0236.png
+/data/all-together-training/dataset/monge_112.jpg /data/all-together-training/annotation/monge_112.png
+/data/all-together-training/dataset/facade_67.jpg /data/all-together-training/annotation/facade_67.png
+/data/all-together-training/dataset/cmp_b0214.jpg /data/all-together-training/annotation/cmp_b0214.png
+/data/all-together-training/dataset/cmp_b0342.jpg /data/all-together-training/annotation/cmp_b0342.png
+/data/all-together-training/dataset/cmp_b0154.jpg /data/all-together-training/annotation/cmp_b0154.png
+/data/all-together-training/dataset/monge_73.jpg /data/all-together-training/annotation/monge_73.png
+/data/all-together-training/dataset/cmp_b0011.jpg /data/all-together-training/annotation/cmp_b0011.png
+/data/all-together-training/dataset/facade_0_0084655_0084815.jpg /data/all-together-training/annotation/facade_0_0084655_0084815.png
+/data/all-together-training/dataset/IMG_5751.jpg /data/all-together-training/annotation/IMG_5751.png
+/data/all-together-training/dataset/monge_83.jpg /data/all-together-training/annotation/monge_83.png
+/data/all-together-training/dataset/IMG_5636.jpg /data/all-together-training/annotation/IMG_5636.png
+/data/all-together-training/dataset/cmp_b0003.jpg /data/all-together-training/annotation/cmp_b0003.png
+/data/all-together-training/dataset/IMG_5549.jpg /data/all-together-training/annotation/IMG_5549.png
+/data/all-together-training/dataset/IMG_5731.jpg /data/all-together-training/annotation/IMG_5731.png
+/data/all-together-training/dataset/IMG_5623.jpg /data/all-together-training/annotation/IMG_5623.png
+/data/all-together-training/dataset/facade_0_0102661_0102921.jpg /data/all-together-training/annotation/facade_0_0102661_0102921.png
+/data/all-together-training/dataset/facade_23.jpg /data/all-together-training/annotation/facade_23.png
+/data/all-together-training/dataset/cmp_b0110.jpg /data/all-together-training/annotation/cmp_b0110.png
+/data/all-together-training/dataset/IMG_5559.jpg /data/all-together-training/annotation/IMG_5559.png
+/data/all-together-training/dataset/cmp_b0196.jpg /data/all-together-training/annotation/cmp_b0196.png
+/data/all-together-training/dataset/IMG_5512.jpg /data/all-together-training/annotation/IMG_5512.png
+/data/all-together-training/dataset/facade_66.jpg /data/all-together-training/annotation/facade_66.png
+/data/all-together-training/dataset/cmp_b0053.jpg /data/all-together-training/annotation/cmp_b0053.png
+/data/all-together-training/dataset/cmp_b0193.jpg /data/all-together-training/annotation/cmp_b0193.png
+/data/all-together-training/dataset/facade_0_0098610_0099003.jpg /data/all-together-training/annotation/facade_0_0098610_0099003.png
+/data/all-together-training/dataset/IMG_5729.jpg /data/all-together-training/annotation/IMG_5729.png
+/data/all-together-training/dataset/cmp_b0031.jpg /data/all-together-training/annotation/cmp_b0031.png
+/data/all-together-training/dataset/monge_111.jpg /data/all-together-training/annotation/monge_111.png
+/data/all-together-training/dataset/berlin_000044.jpg /data/all-together-training/annotation/berlin_000044.png
+/data/all-together-training/dataset/cmp_b0340.jpg /data/all-together-training/annotation/cmp_b0340.png
+/data/all-together-training/dataset/facade_62.jpg /data/all-together-training/annotation/facade_62.png
+/data/all-together-training/dataset/cmp_b0111.jpg /data/all-together-training/annotation/cmp_b0111.png
+/data/all-together-training/dataset/cmp_b0105.jpg /data/all-together-training/annotation/cmp_b0105.png
+/data/all-together-training/dataset/cmp_b0160.jpg /data/all-together-training/annotation/cmp_b0160.png
+/data/all-together-training/dataset/facade_46.jpg /data/all-together-training/annotation/facade_46.png
+/data/all-together-training/dataset/IMG_5642.jpg /data/all-together-training/annotation/IMG_5642.png
+/data/all-together-training/dataset/cmp_b0210.jpg /data/all-together-training/annotation/cmp_b0210.png
+/data/all-together-training/dataset/cmp_b0348.jpg /data/all-together-training/annotation/cmp_b0348.png
+/data/all-together-training/dataset/cmp_b0298.jpg /data/all-together-training/annotation/cmp_b0298.png
+/data/all-together-training/dataset/IMG_5505.jpg /data/all-together-training/annotation/IMG_5505.png
+/data/all-together-training/dataset/cmp_b0275.jpg /data/all-together-training/annotation/cmp_b0275.png
+/data/all-together-training/dataset/monge_6.jpg /data/all-together-training/annotation/monge_6.png
+/data/all-together-training/dataset/facade_0_0099285_0099509.jpg /data/all-together-training/annotation/facade_0_0099285_0099509.png
+/data/all-together-training/dataset/IMG_5557.jpg /data/all-together-training/annotation/IMG_5557.png
+/data/all-together-training/dataset/cmp_b0345.jpg /data/all-together-training/annotation/cmp_b0345.png
+/data/all-together-training/dataset/IMG_5831.jpg /data/all-together-training/annotation/IMG_5831.png
+/data/all-together-training/dataset/IMG_5657.jpg /data/all-together-training/annotation/IMG_5657.png
+/data/all-together-training/dataset/monge_17.jpg /data/all-together-training/annotation/monge_17.png
+/data/all-together-training/dataset/IMG_5507.jpg /data/all-together-training/annotation/IMG_5507.png
+/data/all-together-training/dataset/cmp_b0092.jpg /data/all-together-training/annotation/cmp_b0092.png
+/data/all-together-training/dataset/cmp_b0098.jpg /data/all-together-training/annotation/cmp_b0098.png
+/data/all-together-training/dataset/cmp_b0159.jpg /data/all-together-training/annotation/cmp_b0159.png
+/data/all-together-training/dataset/monge_117.jpg /data/all-together-training/annotation/monge_117.png
+/data/all-together-training/dataset/IMG_5679.jpg /data/all-together-training/annotation/IMG_5679.png
+/data/all-together-training/dataset/cmp_b0230.jpg /data/all-together-training/annotation/cmp_b0230.png
+/data/all-together-training/dataset/cmp_b0005.jpg /data/all-together-training/annotation/cmp_b0005.png
+/data/all-together-training/dataset/bonn_000047.jpg /data/all-together-training/annotation/bonn_000047.png
+/data/all-together-training/dataset/IMG_5602.jpg /data/all-together-training/annotation/IMG_5602.png
+/data/all-together-training/dataset/monge_29bis.jpg /data/all-together-training/annotation/monge_29bis.png
+/data/all-together-training/dataset/IMG_5656.jpg /data/all-together-training/annotation/IMG_5656.png
+/data/all-together-training/dataset/cmp_b0203.jpg /data/all-together-training/annotation/cmp_b0203.png
+/data/all-together-training/dataset/monge_31.jpg /data/all-together-training/annotation/monge_31.png
+/data/all-together-training/dataset/cmp_b0279.jpg /data/all-together-training/annotation/cmp_b0279.png
+/data/all-together-training/dataset/uk_000129.jpg /data/all-together-training/annotation/uk_000129.png
+/data/all-together-training/dataset/IMG_5588.jpg /data/all-together-training/annotation/IMG_5588.png
+/data/all-together-training/dataset/cmp_b0009.jpg /data/all-together-training/annotation/cmp_b0009.png
+/data/all-together-training/dataset/cmp_b0238.jpg /data/all-together-training/annotation/cmp_b0238.png
+/data/all-together-training/dataset/cmp_b0063.jpg /data/all-together-training/annotation/cmp_b0063.png
+/data/all-together-training/dataset/IMG_5815.jpg /data/all-together-training/annotation/IMG_5815.png
+/data/all-together-training/dataset/basel_000058_mv0.jpg /data/all-together-training/annotation/basel_000058_mv0.png
+/data/all-together-training/dataset/cmp_b0346.jpg /data/all-together-training/annotation/cmp_b0346.png
+/data/all-together-training/dataset/IMG_5532.jpg /data/all-together-training/annotation/IMG_5532.png
+/data/all-together-training/dataset/monge_45.jpg /data/all-together-training/annotation/monge_45.png
+/data/all-together-training/dataset/IMG_5681.jpg /data/all-together-training/annotation/IMG_5681.png
+/data/all-together-training/dataset/facade_0_0067243_0067437.jpg /data/all-together-training/annotation/facade_0_0067243_0067437.png
+/data/all-together-training/dataset/facade_7.jpg /data/all-together-training/annotation/facade_7.png
+/data/all-together-training/dataset/IMG_5568.jpg /data/all-together-training/annotation/IMG_5568.png
+/data/all-together-training/dataset/facade_64.jpg /data/all-together-training/annotation/facade_64.png
+/data/all-together-training/dataset/IMG_5511.jpg /data/all-together-training/annotation/IMG_5511.png
+/data/all-together-training/dataset/IMG_5856.jpg /data/all-together-training/annotation/IMG_5856.png
+/data/all-together-training/dataset/IMG_5693.jpg /data/all-together-training/annotation/IMG_5693.png
+/data/all-together-training/dataset/IMG_5644.jpg /data/all-together-training/annotation/IMG_5644.png
+/data/all-together-training/dataset/IMG_5561.jpg /data/all-together-training/annotation/IMG_5561.png
+/data/all-together-training/dataset/IMG_5817.jpg /data/all-together-training/annotation/IMG_5817.png
+/data/all-together-training/dataset/IMG_5926.jpg /data/all-together-training/annotation/IMG_5926.png
+/data/all-together-training/dataset/cmp_b0113.jpg /data/all-together-training/annotation/cmp_b0113.png
+/data/all-together-training/dataset/cmp_b0277.jpg /data/all-together-training/annotation/cmp_b0277.png
+/data/all-together-training/dataset/facade_0_0078702_0078926.jpg /data/all-together-training/annotation/facade_0_0078702_0078926.png
+/data/all-together-training/dataset/cmp_b0368.jpg /data/all-together-training/annotation/cmp_b0368.png
+/data/all-together-training/dataset/monge_57.jpg /data/all-together-training/annotation/monge_57.png
+/data/all-together-training/dataset/cmp_b0206.jpg /data/all-together-training/annotation/cmp_b0206.png
+/data/all-together-training/dataset/monge_59.jpg /data/all-together-training/annotation/monge_59.png
+/data/all-together-training/dataset/cmp_b0251.jpg /data/all-together-training/annotation/cmp_b0251.png
+/data/all-together-training/dataset/cmp_b0069.jpg /data/all-together-training/annotation/cmp_b0069.png
+/data/all-together-training/dataset/IMG_5740.jpg /data/all-together-training/annotation/IMG_5740.png
+/data/all-together-training/dataset/munich_000005.jpg /data/all-together-training/annotation/munich_000005.png
+/data/all-together-training/dataset/IMG_5798.jpg /data/all-together-training/annotation/IMG_5798.png
+/data/all-together-training/dataset/cmp_b0182.jpg /data/all-together-training/annotation/cmp_b0182.png
+/data/all-together-training/dataset/cmp_b0246.jpg /data/all-together-training/annotation/cmp_b0246.png
+/data/all-together-training/dataset/cmp_b0129.jpg /data/all-together-training/annotation/cmp_b0129.png
+/data/all-together-training/dataset/cmp_b0079.jpg /data/all-together-training/annotation/cmp_b0079.png
+/data/all-together-training/dataset/facade_79.jpg /data/all-together-training/annotation/facade_79.png
+/data/all-together-training/dataset/IMG_5907.jpg /data/all-together-training/annotation/IMG_5907.png
+/data/all-together-training/dataset/IMG_5836.jpg /data/all-together-training/annotation/IMG_5836.png
+/data/all-together-training/dataset/IMG_5698.jpg /data/all-together-training/annotation/IMG_5698.png
+/data/all-together-training/dataset/IMG_5718.jpg /data/all-together-training/annotation/IMG_5718.png
+/data/all-together-training/dataset/IMG_5865.jpg /data/all-together-training/annotation/IMG_5865.png
+/data/all-together-training/dataset/facade_0_0068897_0069182.jpg /data/all-together-training/annotation/facade_0_0068897_0069182.png
+/data/all-together-training/dataset/facade_0_0053679_0053953.jpg /data/all-together-training/annotation/facade_0_0053679_0053953.png
+/data/all-together-training/dataset/cmp_b0307.jpg /data/all-together-training/annotation/cmp_b0307.png
+/data/all-together-training/dataset/facade_0_0092172_0092345.jpg /data/all-together-training/annotation/facade_0_0092172_0092345.png
+/data/all-together-training/dataset/cmp_b0365.jpg /data/all-together-training/annotation/cmp_b0365.png
+/data/all-together-training/dataset/cmp_b0310.jpg /data/all-together-training/annotation/cmp_b0310.png
+/data/all-together-training/dataset/basel_000078_mv0.jpg /data/all-together-training/annotation/basel_000078_mv0.png
+/data/all-together-training/dataset/monge_78.jpg /data/all-together-training/annotation/monge_78.png
+/data/all-together-training/dataset/cmp_b0192.jpg /data/all-together-training/annotation/cmp_b0192.png
+/data/all-together-training/dataset/facade_6.jpg /data/all-together-training/annotation/facade_6.png
+/data/all-together-training/dataset/facade_0_0066530_0066682.jpg /data/all-together-training/annotation/facade_0_0066530_0066682.png
+/data/all-together-training/dataset/monge_50.jpg /data/all-together-training/annotation/monge_50.png
+/data/all-together-training/dataset/cmp_b0332.jpg /data/all-together-training/annotation/cmp_b0332.png
+/data/all-together-training/dataset/facade_24.jpg /data/all-together-training/annotation/facade_24.png
+/data/all-together-training/dataset/IMG_5625.jpg /data/all-together-training/annotation/IMG_5625.png
+/data/all-together-training/dataset/bonn_000013.jpg /data/all-together-training/annotation/bonn_000013.png
+/data/all-together-training/dataset/facade_0_0086145_0086355.jpg /data/all-together-training/annotation/facade_0_0086145_0086355.png
+/data/all-together-training/dataset/cmp_b0188.jpg /data/all-together-training/annotation/cmp_b0188.png
+/data/all-together-training/dataset/basel_000052_mv0.jpg /data/all-together-training/annotation/basel_000052_mv0.png
+/data/all-together-training/dataset/cmp_b0221.jpg /data/all-together-training/annotation/cmp_b0221.png
+/data/all-together-training/dataset/IMG_5531.jpg /data/all-together-training/annotation/IMG_5531.png
+/data/all-together-training/dataset/IMG_5799.jpg /data/all-together-training/annotation/IMG_5799.png
+/data/all-together-training/dataset/cmp_b0260.jpg /data/all-together-training/annotation/cmp_b0260.png
+/data/all-together-training/dataset/cmp_b0037.jpg /data/all-together-training/annotation/cmp_b0037.png
+/data/all-together-training/dataset/facade_31.jpg /data/all-together-training/annotation/facade_31.png
+/data/all-together-training/dataset/facade_0_0101200_0101389.jpg /data/all-together-training/annotation/facade_0_0101200_0101389.png
+/data/all-together-training/dataset/cmp_b0181.jpg /data/all-together-training/annotation/cmp_b0181.png
+/data/all-together-training/dataset/facade_0_0078295_0078500.jpg /data/all-together-training/annotation/facade_0_0078295_0078500.png
+/data/all-together-training/dataset/cmp_b0028.jpg /data/all-together-training/annotation/cmp_b0028.png
+/data/all-together-training/dataset/cmp_b0001.jpg /data/all-together-training/annotation/cmp_b0001.png
+/data/all-together-training/dataset/monge_106.jpg /data/all-together-training/annotation/monge_106.png
+/data/all-together-training/dataset/IMG_5695.jpg /data/all-together-training/annotation/IMG_5695.png
+/data/all-together-training/dataset/IMG_5818.jpg /data/all-together-training/annotation/IMG_5818.png
+/data/all-together-training/dataset/cmp_b0094.jpg /data/all-together-training/annotation/cmp_b0094.png
+/data/all-together-training/dataset/cmp_b0315.jpg /data/all-together-training/annotation/cmp_b0315.png
+/data/all-together-training/dataset/IMG_5638.jpg /data/all-together-training/annotation/IMG_5638.png
+/data/all-together-training/dataset/facade_21.jpg /data/all-together-training/annotation/facade_21.png
+/data/all-together-training/dataset/cmp_b0244.jpg /data/all-together-training/annotation/cmp_b0244.png
+/data/all-together-training/dataset/IMG_5692.jpg /data/all-together-training/annotation/IMG_5692.png
+/data/all-together-training/dataset/cmp_b0015.jpg /data/all-together-training/annotation/cmp_b0015.png
+/data/all-together-training/dataset/monge_110.jpg /data/all-together-training/annotation/monge_110.png
+/data/all-together-training/dataset/facade_5.jpg /data/all-together-training/annotation/facade_5.png
+/data/all-together-training/dataset/monge_58.jpg /data/all-together-training/annotation/monge_58.png
+/data/all-together-training/dataset/cmp_b0256.jpg /data/all-together-training/annotation/cmp_b0256.png
+/data/all-together-training/dataset/cmp_b0296.jpg /data/all-together-training/annotation/cmp_b0296.png
+/data/all-together-training/dataset/monge_102.jpg /data/all-together-training/annotation/monge_102.png
+/data/all-together-training/dataset/cmp_b0013.jpg /data/all-together-training/annotation/cmp_b0013.png
+/data/all-together-training/dataset/cmp_b0144.jpg /data/all-together-training/annotation/cmp_b0144.png
+/data/all-together-training/dataset/IMG_5730.jpg /data/all-together-training/annotation/IMG_5730.png
+/data/all-together-training/dataset/cmp_b0367.jpg /data/all-together-training/annotation/cmp_b0367.png
+/data/all-together-training/dataset/cmp_b0195.jpg /data/all-together-training/annotation/cmp_b0195.png
+/data/all-together-training/dataset/cmp_b0265.jpg /data/all-together-training/annotation/cmp_b0265.png

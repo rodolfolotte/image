@@ -2,7 +2,9 @@ import cv2, os, sys
 import matplotlib.pyplot as plt
 import numpy as np
 import itertools
+import time
 
+from random import randint
 from os.path import basename
 from statsmodels.stats.inter_rater import cohens_kappa, to_table
 
@@ -11,6 +13,15 @@ reference = sys.argv[2]
 
 original_base = basename(original)
 reference_base = basename(reference)
+
+accuracy_array = []
+sensitivity_aux = []
+sensitivity_array = []
+precision_aux = []
+precision_array = []
+recall_aux = []
+recall_array = []
+f1_array = []
 
 classes_names = ['background', 'roof', 'sky', 'wall', 'balcony', 'window', 'door', 'shop']
 classes_colors =  [[0, 0, 0], #background
@@ -56,14 +67,48 @@ def checkClass(color):
         else:
             index += 1
 
+def checkZeroDiagonal(confusion_matrix_diag, array):
+    indexes = []
+    for i in range(len(confusion_matrix_diag)):         
+        if(confusion_matrix_diag[i] == 0 and array[i] == 0):                        
+            indexes.append(i)
+    new_cm = np.delete(confusion_matrix_diag, indexes)
+    new_array = np.delete(array, indexes)                                
 
+    return new_cm, new_array
+
+
+def normalizeImage(image):
+    rows_image, cols_image, bands_image = image.shape
+    color_new_image = []
+    for i in range(rows_image):
+        for j in range(cols_image):
+            color_image = image[i, j]
+
+            for b in range(bands_image):
+                if (color_image[b] > 0 and color_image[b] <= 70):		
+                    color_image[b] = 0
+            
+                if (color_image[b] > 70 and color_image[b] <= 140):		
+                    color_image[b] = 128
+                
+                if (color_image[b] > 140 and color_image[b] < 256):		
+                    color_image[b] = 255
+
+            image[i, j] = color_image
+
+    return image
+
+    
 if((os.path.isfile(original)) and (os.path.isfile(reference))):
     print("Validating image " + original_base + " with reference: " + reference_base)
     image = cv2.imread(original)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    image = normalizeImage(image)
 
     gt = cv2.imread(reference)
     gt = cv2.cvtColor(gt, cv2.COLOR_BGR2RGB)
+    gt = normalizeImage(gt)
 
     confusion_matrix = np.zeros((len(classes_colors), len(classes_colors)), dtype=int)
 
@@ -93,8 +138,13 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
     f1_score = 0.0
     error_rate = 0.0
 
-    for i in range(rows_image):
-        for j in range(cols_image):
+    n = 200000
+    
+    if(n < total_pixels):
+        for k in range(n-1):
+            i = randint(0, rows_image-1)
+            j = randint(0, cols_image-1)
+
             color_image = image[i, j]
             color_image = map(int, color_image)
             color_image_index = checkClass(color_image)
@@ -103,52 +153,68 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
             color_gt = map(int, color_gt)
             color_gt_index = checkClass(color_gt)
 
-            if(color_image == color_gt):
-                confusion_matrix[color_image_index, color_image_index] += 1
-            else:
-                confusion_matrix[color_gt_index, color_image_index] += 1
+            if((color_image_index != None) and (color_gt_index != None)):
+                if(color_image == color_gt):                                
+                    confusion_matrix[color_image_index, color_image_index] += 1                
+                else:                          
+                    confusion_matrix[color_gt_index, color_image_index] += 1
+
+            # print(str(color_image) + " is equal of " + str(color_gt) + ": " + str(color_image == color_gt) + " class_image: " + str(color_image_index) + " class_gt: " + str(color_gt_index))
+                  
+    else:
+        print("N is bigger than number of pixels!")
 
     tp = confusion_matrix.diagonal().sum()
     #tn = 1.0
-    fp = np.sum(confusion_matrix, axis=0) - tp
-    fn = np.sum(confusion_matrix, axis=1) - tp
+    fp = np.sum(confusion_matrix, axis=0) - confusion_matrix.diagonal()
+    fn = np.sum(confusion_matrix, axis=1) - confusion_matrix.diagonal()
+
+    diagonal_fp, fp = checkZeroDiagonal(confusion_matrix.diagonal(), fp)
+    diagonal_fn, fn = checkZeroDiagonal(confusion_matrix.diagonal(), fn)
 
     # accuracy
     #accuracy = (tp + tn) / (tp + tn + fp + fn)
-    accuracy = confusion_matrix.diagonal().sum() / float(total_pixels)
+    accuracy = confusion_matrix.diagonal().sum() / float(n)
 
     # sensitivity, recall, hit rate, or true positive rate (TPR)
-    sensitivity = tp / (tp + fn)
+    # sensitivity = tp / (tp + fn)
+    sensitivity_aux = np.true_divide(diagonal_fn, (diagonal_fn + fn))
+    sensitivity = np.mean(sensitivity_aux)
 
     # specificity or true negative rate (TNR)
     #specificity = tn / (tn + fp)
 
     #precision or positive predictive value (PPV)
-    precision = tp / (tp + fp)
-
+    precision_aux = np.true_divide(diagonal_fp, (diagonal_fp + fp))
+    precision = np.mean(precision_aux)
+    
     # prevalence: how often does the yes condition actually occur in our sample?
     #prevalence = (fn + tp) / (tp + tn + fp + fn)
 
-    # F1 score is the harmonic mean of precision and sensitivity
-    #f1_score = (2 * tp) / (2*tp + fp + fn)
-
+    # F1 score is the harmonic mean of precision and recall
+    # f1_score = (2 * tp) / (2*tp + fp + fn)
+    f1_score = 2 * ((precision * sensitivity) / (precision + sensitivity))
+        
     # error rate or mis-classification rate: overall, how often is it wrong?
-    error_rate = 1 - accuracy
+    #error_rate = 1 - accuracy
 
-    print("...confusion matrix:")
+    #print("...confusion matrix:")
     print(confusion_matrix)
     #plot_confusion_matrix(confusion_matrix, classes=classes_names, normalize=False, title='Confusion matrix', cmap=plt.cm.Blues)
     #plt.show()
+
     print("...total pixels: " + str(total_pixels))
+    print("...random samples: " + str(n))
     print("...overall accuracy: " + '{0:.3f}'.format(accuracy))
-    print("...sensitivity/recall/hit rate/true positive rate: " + str(sensitivity))
+    
+    # print("...sensitivity/recall/hit rate/true positive rate: " + str(sensitivity))
     # print("...specificity/true negative rate: " + '{0:.3f}'.format(specificity))
     print("...precision/positive predictive value: " + str(precision))
     # print("...prevalence: " + '{0:.3f}'.format(prevalence))
     # print("...f1-score: " + '{0:.3f}'.format(f1_score))
-    print("...error rate: " + '{0:.3f}'.format(error_rate))
-    print("...kappa coefficient: ")
-    print(cohens_kappa(confusion_matrix))
+    # print("...error rate: " + '{0:.3f}'.format(error_rate))
+    #print("...kappa coefficient: ")
+    #print(cohens_kappa(confusion_matrix))
 
 
 else:
