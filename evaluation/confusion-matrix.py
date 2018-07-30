@@ -67,6 +67,18 @@ def checkClass(color):
         else:
             index += 1
 
+def sumColumn(matrix, column):
+    total = 0
+    for row in range(len(matrix)):
+        total += matrix[row][column]
+    return total
+
+def sumRow(matrix, row):
+    total = 0
+    for column in range(len(matrix)):
+        total += matrix[row][column]
+    return total
+
 def checkZeroDiagonal(confusion_matrix_diag, array):
     indexes = []
     for i in range(len(confusion_matrix_diag)):         
@@ -159,60 +171,104 @@ if((os.path.isfile(original)) and (os.path.isfile(reference))):
                 else:                          
                     confusion_matrix[color_gt_index, color_image_index] += 1
 
-            # print(str(color_image) + " is equal of " + str(color_gt) + ": " + str(color_image == color_gt) + " class_image: " + str(color_image_index) + " class_gt: " + str(color_gt_index))
-                  
+            # print(str(color_image) + " is equal of " + str(color_gt) + ": " + str(color_image == color_gt) + " class_image: " + str(color_image_index) + " class_gt: " + str(color_gt_index))               
+               
     else:
         print("N is bigger than number of pixels!")
 
-    tp = confusion_matrix.diagonal().sum()
-    tn = confusion_matrix.diagonal().sum()
-    fp = np.sum(confusion_matrix, axis=0) - confusion_matrix.diagonal()
-    fn = np.sum(confusion_matrix, axis=1) - confusion_matrix.diagonal()
+    tp_array = []
+    tn_array = []
+    fp_array = []
+    fn_array = []
+    accuracy_array = []
+    recall_array = []
+    precision_array = []
+    f1_array = []
+    for c in range(len(classes_names)):        
+        if(confusion_matrix[c,c] == 0 or confusion_matrix[c,c]=='nan'):
+            tp_array.append(0)
+            tn_array.append(0)
+            fp_array.append(0)
+            fn_array.append(0)
+            continue
+        else:
+            tp = confusion_matrix[c,c]
+            tp_array.append(tp)
 
-    diagonal_fp, fp = checkZeroDiagonal(confusion_matrix.diagonal(), fp)
-    diagonal_fn, fn = checkZeroDiagonal(confusion_matrix.diagonal(), fn)
+            tn = confusion_matrix.diagonal().sum() - tp
+            tn_array.appned(tn)
 
-    print(diagonal_fp)
-    print(fp)
+            fp = sumColumn(confusion_matrix, c) - tp
+            fp_array.append(fp)
+
+            fn = sumRow(confusion_matrix, c) - tp
+            fn_array.append(fn)
+
+            accuracy = (tp + tn) / float(n)
+            accuracy_array(accuracy)
+
+            recall = tp / (tp + fn)
+            recall_array(recall)
+
+            precision = tp / (tp + fp)
+            precision_array(precision)
+
+            f1_score = 2 * ((precision * recall) / (precision + recall))
+            f1_array(f1_score)
+    
+    print(tp_array)
+    print(tn_array)
+    print(fp_array)
+    print(fn_array)
+    print(accuracy_array)
+    print(f1_array)
+
+    # tp = confusion_matrix.diagonal().sum()
+    # tn = confusion_matrix.diagonal().sum()
+    # fp = np.sum(confusion_matrix, axis=0) - confusion_matrix.diagonal()
+    # fn = np.sum(confusion_matrix, axis=1) - confusion_matrix.diagonal()
+
+    # diagonal_fp, fp = checkZeroDiagonal(confusion_matrix.diagonal(), fp)
+    # diagonal_fn, fn = checkZeroDiagonal(confusion_matrix.diagonal(), fn)
 
     # accuracy
     #accuracy = (tp + tn) / (tp + tn + fp + fn)
-    accuracy = (tp + tn) / float(n)
+    #accuracy = (tp + tn) / float(n)
 
     # sensitivity, recall, hit rate, or true positive rate (TPR)
     # sensitivity = tp / (tp + fn)
-    sensitivity_aux = np.true_divide(diagonal_fn, (diagonal_fn + fn))
-    sensitivity = np.mean(sensitivity_aux)
+    #sensitivity_aux = np.true_divide(diagonal_fn, (diagonal_fn + fn))
+    #sensitivity = np.mean(sensitivity_aux)
 
     # specificity or true negative rate (TNR)
     #specificity = tn / (tn + fp)
 
     #precision or positive predictive value (PPV)
-    precision_aux = np.true_divide(diagonal_fp, (diagonal_fp + fp))
-    precision = np.mean(precision_aux)
+    #precision_aux = np.true_divide(diagonal_fp, (diagonal_fp + fp))
+    #precision = np.mean(precision_aux)
     
     # prevalence: how often does the yes condition actually occur in our sample?
     #prevalence = (fn + tp) / (tp + tn + fp + fn)
 
     # F1 score is the harmonic mean of precision and recall
     # f1_score = (2 * tp) / (2*tp + fp + fn)
-    f1_score = 2 * ((precision * sensitivity) / (precision + sensitivity))
+    #f1_score = 2 * ((precision * sensitivity) / (precision + sensitivity))
         
     # error rate or mis-classification rate: overall, how often is it wrong?
     #error_rate = 1 - accuracy
 
     #print("...confusion matrix:")
-    print(confusion_matrix)
+    #print(confusion_matrix)
     #plot_confusion_matrix(confusion_matrix, classes=classes_names, normalize=False, title='Confusion matrix', cmap=plt.cm.Blues)
     #plt.show()
 
-    print("...total pixels: " + str(total_pixels))
-    print("...random samples: " + str(n))
-    print("...overall accuracy: " + '{0:.3f}'.format(accuracy))
+    #print("...total pixels: " + str(total_pixels))
+    #print("...random samples: " + str(n))
+    #print("...overall accuracy: " + '{0:.3f}'.format(accuracy))
     
     # print("...sensitivity/recall/hit rate/true positive rate: " + str(sensitivity))
     # print("...specificity/true negative rate: " + '{0:.3f}'.format(specificity))
-    print("...precision/positive predictive value: " + str(precision))
+    #print("...precision/positive predictive value: " + str(precision))
     # print("...prevalence: " + '{0:.3f}'.format(prevalence))
     # print("...f1-score: " + '{0:.3f}'.format(f1_score))
     # print("...error rate: " + '{0:.3f}'.format(error_rate))
