@@ -10,13 +10,18 @@ from statsmodels.stats.inter_rater import cohens_kappa, to_table
 inputs = sys.argv[1]
 dataset_name = sys.argv[2]
 
-accuracy_array = []
-sensitivity_array = []
 precision_aux = []
-precision_array = []
 recall_aux = []
-recall_array = []
-f1_array = []
+
+tp_per_image = []
+tn_per_image = []
+fp_per_image = []
+fn_per_image = []
+accuracy_per_image = []
+precision_per_image = []        
+recall_per_image = []
+f1_per_image = []
+
 classes_names = ['background', 'roof', 'sky', 'wall', 'balcony', 'window', 'door', 'shop']
 classes_colors =  [[0, 0, 0], #background
                   [0, 0, 255], #roof
@@ -41,9 +46,7 @@ def plot_confusion_matrix(cm, classes, normalize, cmap):
     fmt = '.3f' if normalize else 'd'
     thresh = cm.max() / 2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
-        plt.text(j, i, format(cm[i, j], fmt),
-                 horizontalalignment="center",
-                 color="white" if cm[i, j] > thresh else "black")
+        plt.text(j, i, format(cm[i, j], fmt), horizontalalignment="center", color="white" if cm[i, j] > thresh else "black")
 
     plt.tight_layout()
     plt.ylabel('True label')
@@ -51,6 +54,20 @@ def plot_confusion_matrix(cm, classes, normalize, cmap):
    
     plt.savefig(dataset_name + ".pdf")
     
+
+def sumColumn(matrix, column):
+    total = 0
+    for row in range(len(matrix)):
+        total += matrix[row][column]
+    return total
+
+
+def sumRow(matrix, row):
+    total = 0
+    for column in range(len(matrix)):
+        total += matrix[row][column]
+    return total
+
 
 def checkClass(color):
     index = 0
@@ -129,21 +146,7 @@ for line in lines:
         total_pixels = rows_image * cols_image
         color_image_index = 0
         color_gt_index = 0
-
-        tp = 0.0
-        tn = 0.0
-        fp = 0.0
-        fn = 0.0
-        accuracy = 0.0
-        sensitivity = 0.0
-        specificity = 0.0
-        precision = 0.0
-        recall = 0.0
-        prevalence = 0.0
-        f1 = 0.0
-        error_rate = 0.0
-
-        n = 100000
+        n = 50000
 
         # randomly sweep the images
         if(n < total_pixels):
@@ -166,47 +169,79 @@ for line in lines:
                         cm[color_gt_index, color_image_index] += 1
         else:
             print("N is bigger than number of pixels!")
-
-        tp = cm.diagonal().sum()
-        #tn = np.sum(np.triu(cm)) + np.sum(np.tril(cm))
-        fp = np.sum(cm, axis=0) - cm.diagonal()
-        fn = np.sum(cm, axis=1) - cm.diagonal()
-
-        diagonal_fp, fp = checkZeroDiagonal(cm.diagonal(), fp)
-        diagonal_fn, fn = checkZeroDiagonal(cm.diagonal(), fn)
-
-        # accuracy
-        #accuracy = (tp + tn) / (tp + tn + fp + fn)
-        accuracy = cm.diagonal().sum() / float(n)
-        accuracy_array.append(accuracy)
-
-        # sensitivity, recall, hit rate, or true positive rate (TPR)
-        #sensitivity = tp / (tp + fn)
-        #sensitivity_array.append(sensitivity)  
         
-        # specificity or true negative rate (TNR)
-        #specificity = tn / (tn + fp)
+        tp_array = []
+        tn_array = []
+        fp_array = []
+        fn_array = []
+        accuracy_array = []
+        precision_array = []        
+        recall_array = []
+        f1_array = []
+        for c in range(len(classes_names)): 
+            tp = 0.0
+            tn = 0.0
+            fp = 0.0
+            fn = 0.0
+            accuracy = 0.0
+            precision = 0.0
+            recall = 0.0
+            f1 = 0.0
 
-        #precision or positive predictive value (PPV)       
-        precision_aux = np.true_divide(diagonal_fp, (diagonal_fp + fp))        
-        precision = np.mean(precision_aux)        
-        precision_array.append(precision)
+            if(cm[c,c] == 0 or cm[c,c]=='nan'):
+                tp_array.append(0)
+                tn_array.append(0)
+                fp_array.append(0)
+                fn_array.append(0)
+                continue
+            else:
+                tp = cm[c,c]
+                tp_array.append(tp)
 
-        # recall
-        recall_aux = np.true_divide(diagonal_fn, (diagonal_fn + fn))
-        recall = np.mean(recall_aux)
-        recall_array.append(recall)
+                fp = sumColumn(cm, c) - tp
+                fp_array.append(fp)
 
-        # F1 score is the harmonic mean of precision and sensitivity
-        f1 = 2 * ((precision * recall) / (precision + recall))
-        f1_array.append(f1)
+                fn = sumRow(cm, c) - tp
+                fn_array.append(fn)
+
+                tn = cm.sum() - tp - fp - fn
+                tn_array.append(tn)
+
+                #accuracy = (tp + tn) / (tp + tn + fp + fn)
+                #accuracy = cm.diagonal().sum() / float(n)
+                accuracy = (tp + tn) / float(n)
+                accuracy_array.append(accuracy)
+
+                # sensitivity, recall, hit rate, or true positive rate (TPR)                                
+                recall = tp / float(tp + fn)
+                recall_array.append(recall)
                 
-        # prevalence: how often does the yes condition actually occur in our sample?
-        #prevalence = (fn + tp) / (tp + tn + fp + fn)
+                # specificity or true negative rate (TNR)
+                #specificity = tn / (tn + fp)
 
+                #precision or positive predictive value (PPV)       
+                #precision_aux = np.true_divide(diagonal_fp, (diagonal_fp + fp)) 
+                precision = tp / float(tp + fp)
+                precision_array.append(precision)
+
+                #prevalence: how often does the yes condition actually occur in our sample?
+                #prevalence = (fn + tp) / (tp + tn + fp + fn)
+
+                f1_score = 2 * ((precision * recall) / (precision + recall))
+                f1_array.append(f1_score)
+        
         #print(cohens_kappa(cm))
 
+        # for each image, store confusion-matrix and the matrix for each classes
         cm_array.append(cm)
+        tp_per_image.append(tp_array)
+        tn_per_image.append(tn_array)
+        fp_per_image.append(fp_array)
+        fn_per_image.append(fn_array)
+        accuracy_per_image.append(np.mean(accuracy_array))
+        recall_per_image.append(np.mean(recall_array))
+        precision_per_image.append(np.mean(precision_array))
+        f1_per_image.append(np.mean(f1_array))
 
     else:
         print("Original or reference image is not a valid file. Check it and try again!")
@@ -219,33 +254,62 @@ for i in range(len(classes_colors)):
             cm_aux = cm_array[k]
             sum_cm = sum_cm + cm_aux[i,j]
 
-        cm_sum[i,j] = sum_cm
+        if(np.isnan(sum_cm)):
+            sum_cm = 0
+
+        cm_sum[i,j] = sum_cm        
         sum_cm = 0
 
+
+tp_array = []
+tn_array = []
+fp_array = []
+fn_array = []
+for i in range(len(classes_colors)):
+    count_tp = 0
+    count_tn = 0
+    count_fp = 0
+    count_fn = 0
+    for image in range(len(tp_per_image)):        
+        count_tp += tp_per_image[image][i]
+        count_tn += tn_per_image[image][i]
+        count_fp += fp_per_image[image][i]
+        count_fn += fn_per_image[image][i]
+
+    tp_array.append(np.mean(count_tp))
+    tn_array.append(np.mean(count_tn))
+    fp_array.append(np.mean(count_fp))
+    fn_array.append(np.mean(count_fn))
+
+
 plot_confusion_matrix(cm_sum, classes=classes_names, normalize=True, cmap=plt.cm.Blues)
-# sum_cm.print_stats()
+# cm_sum.print_stats()
 # plt.show()
 
-avg = np.mean(accuracy_array)
-std = np.std(accuracy_array)
-var = np.var(accuracy_array)
+avg = np.mean(accuracy_per_image)
+std = np.std(accuracy_per_image)
+var = np.var(accuracy_per_image)
 
 #avg_sen = np.mean(sensitivity_array)
 #std_sen = np.std(sensitivity_array)
 #var_sen = np.var(sensitivity_array)
 
-avg_pr = np.mean(precision_array)
-std_pr = np.std(precision_array)
-var_pr = np.var(precision_array)
+avg_pr = np.mean(precision_per_image)
+std_pr = np.std(precision_per_image)
+var_pr = np.var(precision_per_image)
 
-avg_rc = np.mean(recall_array)
-std_rc = np.std(recall_array)
-var_rc = np.var(recall_array)
+avg_rc = np.mean(recall_per_image)
+std_rc = np.std(recall_per_image)
+var_rc = np.var(recall_per_image)
 
-avg_f1 = np.mean(f1_array)
-std_f1 = np.std(f1_array)
-var_f1 = np.var(f1_array)
+avg_f1 = np.mean(f1_per_image)
+std_f1 = np.std(f1_per_image)
+var_f1 = np.var(f1_per_image)
 
+print("tp: " + str(tp_array))
+print("tn: " + str(tn_array))
+print("fp: " + str(fp_array))
+print("fn: " + str(fn_array))
 print("Average accuracy: " + str(avg))
 # print("Average sensitivity: " + str(avg_sen))
 print("Average precision: " + str(avg_pr))
